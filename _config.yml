@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 长生
+subtitle: hey 好久不见
+description: 长生个人博客
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: 长生
+language: zh-CN
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://huanghuizhou.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -98,30 +98,33 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-yilia
-# theme: yilia
+theme: hexo-theme-yilia-plus
+#theme: hexo-theme-Claudia
+#theme: yelee
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
-
+  type: git
+  repo: https://github.com/huanghuizhou/huanghuizhou.github.io.git
+  branch: main
 
 jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
+
