@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://huanghuizhou.github.io">
-  <title>mysql mvcc原理浅析 | 黄辉宙</title>
+  <title>mysql mvcc原理浅析 | hazel</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql mvcc原理浅析">
 <meta property="og:url" content="https://huanghuizhou.github.io/2022/06/14/mvcc%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/index.html">
-<meta property="og:site_name" content="黄辉宙">
+<meta property="og:site_name" content="hazel">
 <meta property="og:description" content="1  回顾1.1事务四大特性（ACID）  原子性：事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用。 一致性：执行事务前后，数据保持一致，数据库的完整性不会被破坏。 隔离性：不同事务之间互不影响，各并发事务之间数据库是独立的。 持久性： 一个事务被提交之后，它对数据库中数据的改变是持久的。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/mvcc/%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7.png">
@@ -40,12 +40,12 @@
 <meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/mvcc/mvcc5.png">
 <meta property="article:published_time" content="2022-06-14T03:02:32.000Z">
 <meta property="article:modified_time" content="2022-06-14T07:15:19.224Z">
-<meta property="article:author" content="hazel">
+<meta property="article:author" content="黄辉宙">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://huanghuizhou.github.io/assets/data/img/mvcc/%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7.png">
   
-    <link rel="alternative" href="/atom.xml" title="黄辉宙" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="hazel" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -89,7 +89,7 @@
 			<img src="/assets/img/%E9%95%BF%E7%94%9F.png" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/">hazel</a></h1>
+			<h1 class="header-author"><a href="/">黄辉宙</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">hey 好久不见</p>
@@ -174,7 +174,7 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">hazel</h1>
+			  <h1 class="header-author js-header-author">黄辉宙</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>hey 好久不见<i class="icon icon-quo-right"></i></p>
@@ -544,7 +544,7 @@
       <ul class="post-copyright">
         <li>
           <strong>本文作者：</strong>
-          hazel
+          黄辉宙
         </li>
         <li>
           <strong>本文链接：</strong>
@@ -691,7 +691,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2022 <a href="https://huanghuizhou.github.io/" target="_blank">hazel</a>
+    		&copy; 2020-2022 <a href="https://huanghuizhou.github.io/" target="_blank">黄辉宙</a>
     	</div>
       	<div class="footer-right">
 			  by Hazel
@@ -799,10 +799,6 @@
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
@@ -811,11 +807,15 @@
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链路</a>
+                <a href="javascript:void(0)" class="js-tag color3">es</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">es</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链路</a>
               </li>
             
               <li class="article-tag-list-item">
