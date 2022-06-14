@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/themes/hexo-filter-flowchart" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-Claudia" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-yilia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-yilia-hazel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-yilia-plus" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/themes/yelee" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/yelee" vcs="Git" />
