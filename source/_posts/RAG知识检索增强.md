@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RAG（Retrieval-Augmented Generation）知识检索增强
+title: 深入浅出RAG
 date: 2026-03-13 10:00:00
 tags: [AI, RAG, LLM]
 top: 1

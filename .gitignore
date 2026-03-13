@@ -11,3 +11,4 @@
 node_modules/
 .deploy_git/
 db.json
+themes/hexo-theme-yilia-hazel/
