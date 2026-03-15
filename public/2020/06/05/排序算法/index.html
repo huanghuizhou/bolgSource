@@ -213,7 +213,49 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-排序算法" class="article article-type-post " itemscope itemprop="blogPost">
+            
+<style>
+.article-toc-wrapper { position: relative; display: flex; }
+.article-toc-wrapper .article-main { flex: 1; min-width: 0; }
+.toc-sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 15px 20px; margin-left: 30px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+.toc-sidebar .toc-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd; cursor: pointer; user-select: none; display: flex; align-items: center; }
+.toc-sidebar .toc-title .toc-toggle-icon { display: inline-block; margin-right: 6px; transition: transform 0.2s; flex-shrink: 0; }
+.toc-sidebar { transition: width 0.25s ease, padding 0.25s ease, margin 0.25s ease; }
+.toc-sidebar.collapsed { width: 40px; padding: 12px 8px; margin-left: 10px; }
+.toc-sidebar.collapsed .toc-title { margin-bottom: 0; padding-bottom: 0; border-bottom: none; justify-content: center; }
+.toc-sidebar.collapsed .toc-title .toc-text { display: none; }
+.toc-sidebar.collapsed .toc-title .toc-toggle-icon { margin-right: 0; transform: rotate(-90deg); }
+.toc-sidebar.collapsed .toc-article { display: none; }
+.toc-sidebar .toc-article { font-size: 13px; line-height: 1.6; }
+.toc-sidebar .toc-article .toc, .toc-sidebar .toc-article ul { list-style: none; padding-left: 0; margin: 0; }
+.toc-sidebar .toc-article .toc-item { margin: 4px 0; padding-left: 1em; border-left: 2px solid transparent; }
+.toc-sidebar .toc-article .toc-item:hover { border-left-color: #4d4d4d; }
+.toc-sidebar .toc-article a { color: #666; text-decoration: none; }
+.toc-sidebar .toc-article a:hover { color: #4d4d4d; }
+.toc-sidebar .toc-article .toc-child { padding-left: 1em; }
+@media screen and (max-width: 1100px) { .toc-sidebar { display: none; } .article-toc-wrapper { display: block; } }
+.article-toc-wrapper .toc-container { display: none !important; }
+</style>
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.querySelector('.toc-sidebar');
+    var title = document.querySelector('.toc-sidebar .toc-title');
+    if (!sidebar || !title) return;
+    var icon = document.createElement('span');
+    icon.className = 'toc-toggle-icon';
+    icon.innerHTML = '▼';
+    icon.title = '点击展开/收起目录';
+    title.insertBefore(icon, title.firstChild);
+    title.addEventListener('click', function() {
+      sidebar.classList.toggle('collapsed');
+    });
+  });
+})();
+</script>
+<div class="article-toc-wrapper">
+  <div class="article-main">
+    <article id="post-排序算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -461,6 +503,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1 算法简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 时间复杂度及空间复杂度概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 算法基本特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2  常见的排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO-n-2-%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 时间复杂度为O(n^2)的排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 插入排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 选择排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%AA%81%E7%A0%B4O-n-2-%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 突破O(n^2)的排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="toc-number">2.3.</span> <span class="toc-text">2.2.1 希尔排序</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -476,6 +531,13 @@
 
 
 
+
+  </div>
+  <aside class="toc-sidebar">
+    <div class="toc-title"><span class="toc-text">目录</span></div>
+    <div class="toc-article"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1 算法简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 时间复杂度及空间复杂度概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 算法基本特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2  常见的排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO-n-2-%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 时间复杂度为O(n^2)的排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 插入排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 选择排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%AA%81%E7%A0%B4O-n-2-%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 突破O(n^2)的排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="toc-number">2.3.</span> <span class="toc-text">2.2.1 希尔排序</span></a></li></ol></li></ol></div>
+  </aside>
+</div>
 
           </div>
         </div>
@@ -584,14 +646,6 @@
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
@@ -601,6 +655,14 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -616,19 +678,15 @@
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链路</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
+                <a href="javascript:void(0)" class="js-tag color3">链路</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -641,6 +699,10 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小龙虾</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
             
               <li class="article-tag-list-item">

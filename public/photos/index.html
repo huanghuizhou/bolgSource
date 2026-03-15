@@ -212,7 +212,49 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            
+<style>
+.article-toc-wrapper { position: relative; display: flex; }
+.article-toc-wrapper .article-main { flex: 1; min-width: 0; }
+.toc-sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 15px 20px; margin-left: 30px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+.toc-sidebar .toc-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd; cursor: pointer; user-select: none; display: flex; align-items: center; }
+.toc-sidebar .toc-title .toc-toggle-icon { display: inline-block; margin-right: 6px; transition: transform 0.2s; flex-shrink: 0; }
+.toc-sidebar { transition: width 0.25s ease, padding 0.25s ease, margin 0.25s ease; }
+.toc-sidebar.collapsed { width: 40px; padding: 12px 8px; margin-left: 10px; }
+.toc-sidebar.collapsed .toc-title { margin-bottom: 0; padding-bottom: 0; border-bottom: none; justify-content: center; }
+.toc-sidebar.collapsed .toc-title .toc-text { display: none; }
+.toc-sidebar.collapsed .toc-title .toc-toggle-icon { margin-right: 0; transform: rotate(-90deg); }
+.toc-sidebar.collapsed .toc-article { display: none; }
+.toc-sidebar .toc-article { font-size: 13px; line-height: 1.6; }
+.toc-sidebar .toc-article .toc, .toc-sidebar .toc-article ul { list-style: none; padding-left: 0; margin: 0; }
+.toc-sidebar .toc-article .toc-item { margin: 4px 0; padding-left: 1em; border-left: 2px solid transparent; }
+.toc-sidebar .toc-article .toc-item:hover { border-left-color: #4d4d4d; }
+.toc-sidebar .toc-article a { color: #666; text-decoration: none; }
+.toc-sidebar .toc-article a:hover { color: #4d4d4d; }
+.toc-sidebar .toc-article .toc-child { padding-left: 1em; }
+@media screen and (max-width: 1100px) { .toc-sidebar { display: none; } .article-toc-wrapper { display: block; } }
+.article-toc-wrapper .toc-container { display: none !important; }
+</style>
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.querySelector('.toc-sidebar');
+    var title = document.querySelector('.toc-sidebar .toc-title');
+    if (!sidebar || !title) return;
+    var icon = document.createElement('span');
+    icon.className = 'toc-toggle-icon';
+    icon.innerHTML = '▼';
+    icon.title = '点击展开/收起目录';
+    title.insertBefore(icon, title.firstChild);
+    title.addEventListener('click', function() {
+      sidebar.classList.toggle('collapsed');
+    });
+  });
+})();
+</script>
+<div class="article-toc-wrapper">
+  <div class="article-main">
+    <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -382,11 +424,31 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+
+  </div>
+  <aside class="toc-sidebar">
+    <div class="toc-title"><span class="toc-text">目录</span></div>
+    <div class="toc-article">目录，不存在的…</div>
+  </aside>
+</div>
 
           </div>
         </div>
@@ -495,14 +557,6 @@
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
@@ -512,6 +566,14 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -527,19 +589,15 @@
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链路</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
+                <a href="javascript:void(0)" class="js-tag color3">链路</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -552,6 +610,10 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小龙虾</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
             
               <li class="article-tag-list-item">

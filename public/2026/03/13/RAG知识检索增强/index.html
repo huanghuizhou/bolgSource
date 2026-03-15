@@ -226,7 +226,49 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-RAG知识检索增强" class="article article-type-post " itemscope itemprop="blogPost">
+            
+<style>
+.article-toc-wrapper { position: relative; display: flex; }
+.article-toc-wrapper .article-main { flex: 1; min-width: 0; }
+.toc-sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 15px 20px; margin-left: 30px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+.toc-sidebar .toc-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd; cursor: pointer; user-select: none; display: flex; align-items: center; }
+.toc-sidebar .toc-title .toc-toggle-icon { display: inline-block; margin-right: 6px; transition: transform 0.2s; flex-shrink: 0; }
+.toc-sidebar { transition: width 0.25s ease, padding 0.25s ease, margin 0.25s ease; }
+.toc-sidebar.collapsed { width: 40px; padding: 12px 8px; margin-left: 10px; }
+.toc-sidebar.collapsed .toc-title { margin-bottom: 0; padding-bottom: 0; border-bottom: none; justify-content: center; }
+.toc-sidebar.collapsed .toc-title .toc-text { display: none; }
+.toc-sidebar.collapsed .toc-title .toc-toggle-icon { margin-right: 0; transform: rotate(-90deg); }
+.toc-sidebar.collapsed .toc-article { display: none; }
+.toc-sidebar .toc-article { font-size: 13px; line-height: 1.6; }
+.toc-sidebar .toc-article .toc, .toc-sidebar .toc-article ul { list-style: none; padding-left: 0; margin: 0; }
+.toc-sidebar .toc-article .toc-item { margin: 4px 0; padding-left: 1em; border-left: 2px solid transparent; }
+.toc-sidebar .toc-article .toc-item:hover { border-left-color: #4d4d4d; }
+.toc-sidebar .toc-article a { color: #666; text-decoration: none; }
+.toc-sidebar .toc-article a:hover { color: #4d4d4d; }
+.toc-sidebar .toc-article .toc-child { padding-left: 1em; }
+@media screen and (max-width: 1100px) { .toc-sidebar { display: none; } .article-toc-wrapper { display: block; } }
+.article-toc-wrapper .toc-container { display: none !important; }
+</style>
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.querySelector('.toc-sidebar');
+    var title = document.querySelector('.toc-sidebar .toc-title');
+    if (!sidebar || !title) return;
+    var icon = document.createElement('span');
+    icon.className = 'toc-toggle-icon';
+    icon.innerHTML = '▼';
+    icon.title = '点击展开/收起目录';
+    title.insertBefore(icon, title.firstChild);
+    title.addEventListener('click', function() {
+      sidebar.classList.toggle('collapsed');
+    });
+  });
+})();
+</script>
+<div class="article-toc-wrapper">
+  <div class="article-main">
+    <article id="post-RAG知识检索增强" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -691,6 +733,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRAG%EF%BC%88Retrieval-Augmented-Generation%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">什么是RAG（Retrieval-Augmented Generation）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81RAG"><span class="toc-number">2.</span> <span class="toc-text">为什么需要RAG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RAG%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">RAG原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">索引构建过程:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2-Chroma-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.1.</span> <span class="toc-text">本地部署 Chroma 向量数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">3.2.</span> <span class="toc-text">向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">相似度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AC%E5%9B%9E-Recall"><span class="toc-number">3.4.</span> <span class="toc-text">召回 (Recall)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%8E%92-Rerank"><span class="toc-number">3.5.</span> <span class="toc-text">重排 (Rerank)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RAG%E8%BF%9B%E9%98%B6"><span class="toc-number">4.</span> <span class="toc-text">RAG进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Query%E6%94%B9%E5%86%99"><span class="toc-number">4.1.</span> <span class="toc-text">Query改写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BD%AE-Query-%E6%94%B9%E5%86%99"><span class="toc-number">4.1.1.</span> <span class="toc-text">单轮 Query 改写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BD%AE-Query-%E6%94%B9%E5%86%99"><span class="toc-number">4.1.2.</span> <span class="toc-text">多轮 Query 改写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A7%86%E8%A7%92-Query-%E6%89%A9%E5%B1%95%EF%BC%88Multi-query-Expansion%EF%BC%89"><span class="toc-number">4.1.3.</span> <span class="toc-text">多视角 Query 扩展（Multi-query Expansion）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HyDE%EF%BC%88Hypothetical-Document-Embeddings%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">HyDE（Hypothetical Document Embeddings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-B-%E6%B5%8B%E8%AF%95%EF%BC%88RAG%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">A&#x2F;B 测试（RAG评估）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89%E6%B5%8B%E8%AF%95%E5%8F%98%E9%87%8F%EF%BC%88A-B%E7%BB%84%EF%BC%89"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 定义测试变量（A&#x2F;B组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9E%84%E5%BB%BA%E8%AF%84%E4%BC%B0%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 构建评估数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 自动化评估指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%A3%80%E7%B4%A2%E7%BB%93%E6%9E%9C%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7%EF%BC%88Retrieval-Relevance%EF%BC%89"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">评估检索结果的相关性（Retrieval Relevance）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%9C%80%E7%BB%88%E5%9B%9E%E7%AD%94%E7%9A%84%E8%B4%A8%E9%87%8F%EF%BC%88Answer-Quality%EF%BC%89"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">评估最终回答的质量（Answer Quality）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Prompt%EF%BC%88%E5%B9%BB%E8%A7%89%E5%88%A4%E6%96%AD%EF%BC%89"><span class="toc-number">4.3.3.3.</span> <span class="toc-text">Prompt（幻觉判断）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1-%E9%83%A8%E7%BD%B2%E7%9B%91%E6%8E%A7"><span class="toc-number">4.3.4.</span> <span class="toc-text">4. 数据统计 部署监控</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text">思考</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">AI能做什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent-%E5%9C%BA%E6%99%AF%E5%88%86%E7%B1%BB"><span class="toc-number">5.1.1.</span> <span class="toc-text">Agent 场景分类</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -706,6 +761,13 @@
 
 
 
+
+  </div>
+  <aside class="toc-sidebar">
+    <div class="toc-title"><span class="toc-text">目录</span></div>
+    <div class="toc-article"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRAG%EF%BC%88Retrieval-Augmented-Generation%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">什么是RAG（Retrieval-Augmented Generation）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81RAG"><span class="toc-number">2.</span> <span class="toc-text">为什么需要RAG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RAG%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">RAG原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">索引构建过程:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2-Chroma-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.1.</span> <span class="toc-text">本地部署 Chroma 向量数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">3.2.</span> <span class="toc-text">向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">相似度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AC%E5%9B%9E-Recall"><span class="toc-number">3.4.</span> <span class="toc-text">召回 (Recall)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%8E%92-Rerank"><span class="toc-number">3.5.</span> <span class="toc-text">重排 (Rerank)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RAG%E8%BF%9B%E9%98%B6"><span class="toc-number">4.</span> <span class="toc-text">RAG进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Query%E6%94%B9%E5%86%99"><span class="toc-number">4.1.</span> <span class="toc-text">Query改写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BD%AE-Query-%E6%94%B9%E5%86%99"><span class="toc-number">4.1.1.</span> <span class="toc-text">单轮 Query 改写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BD%AE-Query-%E6%94%B9%E5%86%99"><span class="toc-number">4.1.2.</span> <span class="toc-text">多轮 Query 改写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A7%86%E8%A7%92-Query-%E6%89%A9%E5%B1%95%EF%BC%88Multi-query-Expansion%EF%BC%89"><span class="toc-number">4.1.3.</span> <span class="toc-text">多视角 Query 扩展（Multi-query Expansion）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HyDE%EF%BC%88Hypothetical-Document-Embeddings%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">HyDE（Hypothetical Document Embeddings）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-B-%E6%B5%8B%E8%AF%95%EF%BC%88RAG%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">A&#x2F;B 测试（RAG评估）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89%E6%B5%8B%E8%AF%95%E5%8F%98%E9%87%8F%EF%BC%88A-B%E7%BB%84%EF%BC%89"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 定义测试变量（A&#x2F;B组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9E%84%E5%BB%BA%E8%AF%84%E4%BC%B0%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 构建评估数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 自动化评估指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%A3%80%E7%B4%A2%E7%BB%93%E6%9E%9C%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7%EF%BC%88Retrieval-Relevance%EF%BC%89"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">评估检索结果的相关性（Retrieval Relevance）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%9C%80%E7%BB%88%E5%9B%9E%E7%AD%94%E7%9A%84%E8%B4%A8%E9%87%8F%EF%BC%88Answer-Quality%EF%BC%89"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">评估最终回答的质量（Answer Quality）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Prompt%EF%BC%88%E5%B9%BB%E8%A7%89%E5%88%A4%E6%96%AD%EF%BC%89"><span class="toc-number">4.3.3.3.</span> <span class="toc-text">Prompt（幻觉判断）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1-%E9%83%A8%E7%BD%B2%E7%9B%91%E6%8E%A7"><span class="toc-number">4.3.4.</span> <span class="toc-text">4. 数据统计 部署监控</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text">思考</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">AI能做什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent-%E5%9C%BA%E6%99%AF%E5%88%86%E7%B1%BB"><span class="toc-number">5.1.1.</span> <span class="toc-text">Agent 场景分类</span></a></li></ol></li></ol></li></ol></div>
+  </aside>
+</div>
 
           </div>
         </div>
@@ -814,14 +876,6 @@
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
@@ -831,6 +885,14 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -846,19 +908,15 @@
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链路</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
+                <a href="javascript:void(0)" class="js-tag color3">链路</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -871,6 +929,10 @@
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小龙虾</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
             
               <li class="article-tag-list-item">

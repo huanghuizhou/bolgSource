@@ -218,7 +218,49 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-融云接入" class="article article-type-post " itemscope itemprop="blogPost">
+            
+<style>
+.article-toc-wrapper { position: relative; display: flex; }
+.article-toc-wrapper .article-main { flex: 1; min-width: 0; }
+.toc-sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 15px 20px; margin-left: 30px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+.toc-sidebar .toc-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ddd; cursor: pointer; user-select: none; display: flex; align-items: center; }
+.toc-sidebar .toc-title .toc-toggle-icon { display: inline-block; margin-right: 6px; transition: transform 0.2s; flex-shrink: 0; }
+.toc-sidebar { transition: width 0.25s ease, padding 0.25s ease, margin 0.25s ease; }
+.toc-sidebar.collapsed { width: 40px; padding: 12px 8px; margin-left: 10px; }
+.toc-sidebar.collapsed .toc-title { margin-bottom: 0; padding-bottom: 0; border-bottom: none; justify-content: center; }
+.toc-sidebar.collapsed .toc-title .toc-text { display: none; }
+.toc-sidebar.collapsed .toc-title .toc-toggle-icon { margin-right: 0; transform: rotate(-90deg); }
+.toc-sidebar.collapsed .toc-article { display: none; }
+.toc-sidebar .toc-article { font-size: 13px; line-height: 1.6; }
+.toc-sidebar .toc-article .toc, .toc-sidebar .toc-article ul { list-style: none; padding-left: 0; margin: 0; }
+.toc-sidebar .toc-article .toc-item { margin: 4px 0; padding-left: 1em; border-left: 2px solid transparent; }
+.toc-sidebar .toc-article .toc-item:hover { border-left-color: #4d4d4d; }
+.toc-sidebar .toc-article a { color: #666; text-decoration: none; }
+.toc-sidebar .toc-article a:hover { color: #4d4d4d; }
+.toc-sidebar .toc-article .toc-child { padding-left: 1em; }
+@media screen and (max-width: 1100px) { .toc-sidebar { display: none; } .article-toc-wrapper { display: block; } }
+.article-toc-wrapper .toc-container { display: none !important; }
+</style>
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.querySelector('.toc-sidebar');
+    var title = document.querySelector('.toc-sidebar .toc-title');
+    if (!sidebar || !title) return;
+    var icon = document.createElement('span');
+    icon.className = 'toc-toggle-icon';
+    icon.innerHTML = '▼';
+    icon.title = '点击展开/收起目录';
+    title.insertBefore(icon, title.firstChild);
+    title.addEventListener('click', function() {
+      sidebar.classList.toggle('collapsed');
+    });
+  });
+})();
+</script>
+<div class="article-toc-wrapper">
+  <div class="article-main">
+    <article id="post-融云接入" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -547,6 +589,19 @@ content:&#123;
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%9E%8D%E4%BA%91%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 融云架构图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#App-Key-Secret"><span class="toc-number">1.2.1.</span> <span class="toc-text">App Key &#x2F; Secret</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">2 服务端相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%9C%80%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">服务端需要实现的功能：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A5%E5%85%A5%E8%9E%8D%E4%BA%91"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 服务端接入融云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 注册流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">注册流程：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF"><span class="toc-number">3.</span> <span class="toc-text">3 自定义消息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%8E%A5%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 自定义消息接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%B0%8F%E7%A7%98%E4%B9%A6%E6%B6%88%E6%81%AF"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 小秘书消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%80%83%E5%8B%A4%E6%B6%88%E6%81%AF%EF%BC%88%E6%9A%82%E5%AE%9A%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 考勤消息（暂定）</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -562,6 +617,13 @@ content:&#123;
 
 
 
+
+  </div>
+  <aside class="toc-sidebar">
+    <div class="toc-title"><span class="toc-text">目录</span></div>
+    <div class="toc-article"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%9E%8D%E4%BA%91%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 融云架构图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#App-Key-Secret"><span class="toc-number">1.2.1.</span> <span class="toc-text">App Key &#x2F; Secret</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">2 服务端相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%9C%80%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">服务端需要实现的功能：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A5%E5%85%A5%E8%9E%8D%E4%BA%91"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 服务端接入融云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 注册流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">注册流程：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF"><span class="toc-number">3.</span> <span class="toc-text">3 自定义消息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%8E%A5%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 自定义消息接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%B0%8F%E7%A7%98%E4%B9%A6%E6%B6%88%E6%81%AF"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 小秘书消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%80%83%E5%8B%A4%E6%B6%88%E6%81%AF%EF%BC%88%E6%9A%82%E5%AE%9A%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 考勤消息（暂定）</span></a></li></ol></li></ol></div>
+  </aside>
+</div>
 
           </div>
         </div>
@@ -670,14 +732,6 @@ content:&#123;
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
@@ -687,6 +741,14 @@ content:&#123;
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LLM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -702,19 +764,15 @@ content:&#123;
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链路</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
+                <a href="javascript:void(0)" class="js-tag color3">链路</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+                <a href="javascript:void(0)" class="js-tag color3">云喵</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -727,6 +785,10 @@ content:&#123;
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小龙虾</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
             
               <li class="article-tag-list-item">
