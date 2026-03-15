@@ -3,7 +3,6 @@ layout: mysql
 title: mysql mvcc原理浅析
 date: 2022-06-14 11:02:32
 tags: [mysql]
-top: 1
 ---
 
 # 1  回顾
